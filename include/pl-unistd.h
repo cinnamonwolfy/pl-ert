@@ -45,6 +45,7 @@
 extern int pl_syscall(int syscall, int paramNum, void* params);
 
 int open(const char* pathname, int flags, int mode);
+int close(int fd);
 int read(int fd, void* buffer, unsigned int length);
 int write(int fd, void* data, unsigned int length);
 void exit(int code);
