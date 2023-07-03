@@ -9,7 +9,7 @@ and will only link "properly" (no warnings) with a freestanding C compiler.
 
 Currently, there is no proper build system. While I work on a proper build
 system, you can use the `./compile.sh` script in the root of the directory.
-It does the bare minimum, and it will build it with debug symbols by default.
+It compiles in 64-bit mode and with debug symbols by default
 
 # Contributions
 
