@@ -74,5 +74,5 @@ int close(int fd);
 int read(int fd, void* buffer, unsigned int length);
 int write(int fd, void* data, unsigned int length);
 void exit(int code);
-void* mmap(void* addr, unsigned long length, int prot, int flags, int fd, long offset){
+void* mmap(void* addr, unsigned long length, int prot, int flags, int fd, long offset);
 int munmap(void* addr, unsigned long length);
