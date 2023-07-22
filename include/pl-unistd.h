@@ -69,10 +69,11 @@
 
 extern long pl_syscall(int syscall, int paramNum, void* params);
 
-int open(const char* pathname, int flags, int mode);
-int close(int fd);
-int read(int fd, void* buffer, unsigned long length);
-int write(int fd, void* data, unsigned long length);
+long open(const char* pathname, int flags, int mode);
+long close(int fd);
+long read(int fd, void* buffer, unsigned long length);
+long write(int fd, void* data, unsigned long length);
 void exit(int code);
 void* mmap(void* addr, unsigned long length, int prot, int flags, int fd, long offset);
 int munmap(void* addr, unsigned long length);
+long lseek(int fd, long offset, int whence);
