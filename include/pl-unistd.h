@@ -77,3 +77,5 @@ void exit(int code);
 void* mmap(void* addr, unsigned long length, int prot, int flags, int fd, long offset);
 int munmap(void* addr, unsigned long length);
 long lseek(int fd, long offset, int whence);
+long link(const char* path1, const char* path2);
+long unlink(const char* path);
