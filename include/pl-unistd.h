@@ -67,15 +67,51 @@
 #define MAP_STACK 131072
 #define MAP_SYNC 524288
 
+/* List of lseek() operations */
+#define SEEK_SET 0
+#define SEEK_CUR 1
+#define SEEK_END 2
+
+/* Time Struct */
+struct timespec {
+	long long tv_sec;
+	long long tv_nsec;
+};
+
+/* Stat Struct */
+struct stat {
+	int st_dev;
+	int st_ino;
+	int st_mode;
+	unsigned int st_nlink;
+	unsigned int st_uid;
+	unsigned int st_gid;
+	int st_rdev;
+	unsigned long st_size;
+	unsigned long st_blksize;
+	unsigned long st_blocks;
+	struct timespec st_atim;
+	struct timespec st_mtim;
+	struct timespec st_ctim;
+
+	#define st_atime st_atim.tv_sec
+	#define st_mtime st_mtim.tv_sec
+	#define st_ctime st_ctim.tv_sec
+};
+
 extern long pl_syscall(int syscall, int paramNum, void* params);
 
-long open(const char* pathname, int flags, int mode);
-long close(int fd);
+int open(const char* pathname, int flags, int mode);
+int close(int fd);
 long read(int fd, void* buffer, unsigned long length);
 long write(int fd, void* data, unsigned long length);
 void exit(int code);
 void* mmap(void* addr, unsigned long length, int prot, int flags, int fd, long offset);
 int munmap(void* addr, unsigned long length);
 long lseek(int fd, long offset, int whence);
-long link(const char* path1, const char* path2);
-long unlink(const char* path);
+int link(const char* path1, const char* path2);
+int symlink(const char* path1, const char* path2);
+int unlink(const char* path);
+int stat(const char* path, struct stat* buf);
+long vfork(void);
+long fork(void);

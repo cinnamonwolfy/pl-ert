@@ -1,7 +1,8 @@
 # PortaLinux Embedded Runtime
 
-The PortaLinux Embedded Runtime, or PL-ERT, is an implementation of ESB 2.0's
-API (most POSIX calls and all PortaLinux Runtime calls) that does not depend on
+The PortaLinux Embedded Runtime, or PL-ERT, is an implementation of
+[ESB 2.0's API](https://github.com/pocketlinux32/pocketlinux32/tree/main/esb2.rst)
+(most POSIX calls and all PortaLinux Runtime calls) that does not depend on
 the Standard C library. This library only supports static linking and will only
 link "properly" (no warnings) with a freestanding C compiler.
 
