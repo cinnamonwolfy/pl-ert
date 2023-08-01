@@ -4,7 +4,7 @@
 	#include "scnum32.h"
 #endif
 
-/* List of open() modes and flags */
+/* List of open() flags */
 #define O_APPEND 1024
 #define O_ASYNC 8192
 #define O_CLOEXEC 524288
@@ -26,6 +26,8 @@
 #define O_RDONLY 0
 #define O_WRONLY 1
 #define O_RDWR 2
+
+/* List of file operation modes (Used by all file I/O functions)*/
 #define S_IRWXU 448
 #define S_IRUSR 256
 #define S_IWUSR 128
@@ -113,5 +115,10 @@ int link(const char* path1, const char* path2);
 int symlink(const char* path1, const char* path2);
 int unlink(const char* path);
 int stat(const char* path, struct stat* buf);
+int mkdir(const char* path, int mode);
+int chown(const char* path, int uid, int gid);
+int chmod(const char* path, int mode);
+int chdir(const char* path);
+char* getcwd(char* buffer, unsigned long size);
 long vfork(void);
 long fork(void);
